@@ -1,0 +1,56 @@
+﻿<Window x:Class="Assignment2_wpf.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Assignment2_wpf"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid x:Name="mainGrid" >
+        <Border BorderBrush="#FF484B51" BorderThickness="1" Margin="110,14,265,236"/>
+        <Button x:Name="calculate" Content="CALCULATE" HorizontalAlignment="Left" Margin="614,162,0,0" VerticalAlignment="Top" Click="calculate_Click" Background="#FF3D6ABE" FontWeight="Bold" Foreground="#FFFAFAFA" Height="36" Width="86"/>
+        <Label  Content="Enter min number:" HorizontalAlignment="Left" Margin="110,32,0,0" VerticalAlignment="Top"/>
+        <Label Content="Enter max number:" HorizontalAlignment="Left" Margin="111,58,0,0" VerticalAlignment="Top"/>
+        <Label Content="Enter num spaces:" HorizontalAlignment="Left" Margin="110,90,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="minValue"  HorizontalAlignment="Left" Margin="237,38,0,0" VerticalAlignment="Top" Width="120" InputScope="Number"  />
+        <TextBox x:Name="maxValue" HorizontalAlignment="Left" Margin="237,66,0,0" VerticalAlignment="Top" Width="120" InputScope="Number"  />
+        <CheckBox x:Name="showCheckBox" Content="Disable" HorizontalAlignment="Center" Margin="0,66,0,0" VerticalAlignment="Top"  Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked"/>
+        <ListView x:Name="listView" HorizontalAlignment="Left" Height="170" Margin="111,217,0,0" VerticalAlignment="Top" Width="424" d:ItemsSource="{d:SampleData ItemCount=5}" >
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="O" DisplayMemberBinding="{Binding Path=O}" Width="110" />
+                    <GridViewColumn Header="Sin" DisplayMemberBinding="{Binding Path=Sin}" Width="110" />
+                    <GridViewColumn Header="Log" DisplayMemberBinding="{Binding Path=Log}" Width="110" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Slider x:Name="numValue" HorizontalAlignment="Left" Margin="237,97,0,0" VerticalAlignment="Top" Width="120" Maximum="100" Minimum="1" Value="10" TickFrequency="1" IsSnapToTickEnabled="True" />
+        <TextBlock x:Name="sliderValue" HorizontalAlignment="Left" Margin="383,97,0,0" Text="{Binding ElementName=numValue, Path=Value}" VerticalAlignment="Top"  FontSize="14" RenderTransformOrigin="0.527,-1.149"/>
+        <Image HorizontalAlignment="Left" Height="100" Margin="564,16,0,0" VerticalAlignment="Top" Width="99" Source="/Csharp_Logo.png"/>
+        <RadioButton x:Name="rbLightMode" Content="Light Mode" HorizontalAlignment="Left" Margin="668,46,0,0" VerticalAlignment="Top" GroupName="ModeGroup" Checked="rbMode_Checked" IsChecked="True"/>
+        <RadioButton x:Name="rbDarkMode" Content="Dark Mode" HorizontalAlignment="Left" Margin="668,76,0,0" VerticalAlignment="Top" GroupName="ModeGroup" Checked="rbMode_Checked"/>
+        <ListBox Margin="110,217,0,0" x:Name="listBox1" HorizontalAlignment="Left" VerticalAlignment="Top" Width="425" Height="170" Visibility="Hidden"/>
+        <Label Content="Show results by: " HorizontalAlignment="Left" Margin="114,127,0,0" VerticalAlignment="Top"/>
+        <TreeView x:Name="treeView1" Margin="111,217,265,47" />
+
+        <Grid x:Name="textGrid" Margin="110,217,265,0" Background="White"  Height="170" VerticalAlignment="Top">
+            <ScrollViewer VerticalScrollBarVisibility="Visible" HorizontalScrollBarVisibility="Auto" Name="sv1" Margin="-2,0,2,0">
+                <TextBlock TextWrapping="Wrap" Width="190" Name="textBlock1" VerticalAlignment="Top" />
+            </ScrollViewer>
+        </Grid>
+        <ComboBox x:Name="comboBox" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Margin="237,130,0,0" SelectedIndex="0" SelectionChanged="comboBox_SelectionChanged" RenderTransformOrigin="0.5,0.5">
+            <ComboBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.199"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </ComboBox.RenderTransform>
+            <ComboBoxItem Content="ListView" />
+            <ComboBoxItem Content="TextBlock" />
+            <ComboBoxItem Content="TreeView" />
+            <ComboBoxItem Content="ListBox" />
+        </ComboBox>
+    </Grid>
+</Window>

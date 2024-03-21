@@ -1,0 +1,6 @@
+C:\Users\karla\source\repos\Assignment2_wpf\SinComponent\bin\Debug\SinComponent.dll
+C:\Users\karla\source\repos\Assignment2_wpf\SinComponent\bin\Debug\SinComponent.pdb
+C:\Users\karla\source\repos\Assignment2_wpf\SinComponent\obj\Debug\SinComponent.csproj.AssemblyReference.cache
+C:\Users\karla\source\repos\Assignment2_wpf\SinComponent\obj\Debug\SinComponent.csproj.CoreCompileInputs.cache
+C:\Users\karla\source\repos\Assignment2_wpf\SinComponent\obj\Debug\SinComponent.dll
+C:\Users\karla\source\repos\Assignment2_wpf\SinComponent\obj\Debug\SinComponent.pdb
